@@ -1,3 +1,23 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://assets/nitrouscar.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Menu.cs" type="Script" id=2]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Play" type="TouchScreenButton" parent="."]
+position = Vector2( 430, 46 )
+normal = ExtResource( 1 )
+
+[node name="Developers" type="TouchScreenButton" parent="."]
+position = Vector2( 432, 217 )
+normal = ExtResource( 1 )
+
+[node name="Exit" type="TouchScreenButton" parent="."]
+position = Vector2( 427, 376 )
+normal = ExtResource( 1 )
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Developers" to="." method="_on_Developers_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
